@@ -1,39 +1,11 @@
 import 'package:flutter/material.dart';
 
-Widget defaultButton ({
-  double width=double.infinity,
-  bool isUppercase=true,
-  Color background = Colors.blue,
 
-  required Function function,
-  required String text,
-
-}) => Container(
-
-  height: 50.0,
-  width: width,
-  color: background,
-
-
-  child: MaterialButton(
-
-    onPressed: () {
-      function();
-    },
-    child: Text(
-      isUppercase? text.toUpperCase():text,
-
-
-
-    ),
-
-  ),
-);
 Widget defaultFormField({
   required TextEditingController controller,
   required TextInputType type,
 
-  required String?Function(String?)? validate,
+
   void Function(String)? onsubmit,
   required String label,
   required IconData prifex,
@@ -54,7 +26,7 @@ Widget defaultFormField({
 
   obscureText:isPassword,
   controller: controller,
-  validator: validate,
+
   keyboardType: type,
   onFieldSubmitted: onsubmit,
 

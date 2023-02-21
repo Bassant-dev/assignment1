@@ -17,7 +17,7 @@ class _loginState extends State<login> {
   var phoneController = TextEditingController();
 
 
-  var formkey =GlobalKey<FormState>();
+
 
   bool ispasswordshow=true;
   bool ispasswordshow2=true;
@@ -26,183 +26,148 @@ class _loginState extends State<login> {
     return Scaffold(
 
       body: SingleChildScrollView(
-        child: Form(
-          key: formkey,
-          child: Column(
+        child: Column(
 
-            children: [
-              ClipPath(
-                clipper: WaveClipperTwo(),
-                child: Container(
-                  height: 200,
-                  color: Colors.purple,
-                  child: Center(child: Text("Register",style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold
-                  ),)),
-                ),
+          children: [
+            ClipPath(
+              clipper: WaveClipperTwo(),
+              child: Container(
+                height: 200,
+                color: Colors.purple,
+                child: Center(child: Text("Register",style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
+                ),)),
               ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
 
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    defaultFormField(
-                        controller:nameController,
-                        label: 'full name',
-                        prifex: Icons.person,
-                        type: TextInputType.name,
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  defaultFormField(
+                      controller:nameController,
+                      label: 'full name',
+                      prifex: Icons.person,
+                      type: TextInputType.name,
 
-                        validate: (value){
-
-                          if(value!.isEmpty){
-                            return 'name must not be empty';
-
-                          }
-
-                        }
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    defaultFormField(
-                        controller: emailcontroller,
-                        label: 'Email',
-                        prifex: Icons.email,
-                        type: TextInputType.emailAddress,
-
-                        validate: (value){
-
-                          if(value!.isEmpty){
-                            return 'email must not be empty';
-
-                          }
-
-                        }
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    defaultFormField(
-                        controller: passwordController,
-                        suffixpressed: (){
-                          setState(() {
-                            ispasswordshow=!ispasswordshow;
-                          });
-                        },
-                        label: 'password',
-                        prifex: Icons.lock,
-                        type: TextInputType.visiblePassword,
-                        suffix:ispasswordshow? Icons.visibility: Icons.visibility_off,
-                        isPassword: ispasswordshow,
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  defaultFormField(
+                      controller: emailcontroller,
+                      label: 'Email',
+                      prifex: Icons.email,
+                      type: TextInputType.emailAddress,
 
 
-                        validate: ( value){
-                          if(value!.isEmpty){
-                            return 'password must not be empty';
-
-                          }
-                        }
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    defaultFormField(
-                        controller: passwordController1,
-                        suffixpressed: (){
-                          setState(() {
-                            ispasswordshow2=!ispasswordshow2;
-                          });
-                        },
-                        label: 'confirm password',
-                        prifex: Icons.lock,
-                        type: TextInputType.visiblePassword,
-                        suffix:ispasswordshow2? Icons.visibility: Icons.visibility_off,
-                        isPassword: ispasswordshow2,
-
-
-                        validate: ( value){
-                          if(value!.isEmpty){
-                            return 'password must not be empty';
-
-                          }
-                        }
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    defaultFormField(
-                        controller: phoneController,
-
-                        label: 'phone number',
-                        prifex: Icons.phone,
-                        type: TextInputType.phone,
-
-
-                        validate: ( value){
-                          if(value!.isEmpty){
-                            return 'phone must not be empty';
-
-                          }
-                        }
-                    ),
-
-
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Center(
-                      child: Container(
-                        height: 50.0,
-                        width: 350,
-                        color:Colors.purple,
-
-                        child: MaterialButton(
-                            onPressed: (){},
-
-                          textColor:Colors.white ,
-                          child: Text(
-                           'register',
-
-                          ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  defaultFormField(
+                      controller: passwordController,
+                      suffixpressed: (){
+                        setState(() {
+                          ispasswordshow=!ispasswordshow;
+                        });
+                      },
+                      label: 'password',
+                      prifex: Icons.lock,
+                      type: TextInputType.visiblePassword,
+                      suffix:ispasswordshow? Icons.visibility: Icons.visibility_off,
+                      isPassword: ispasswordshow,
 
 
 
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Center(
-                      child: Container(
-                        height: 50.0,
-                        width:350,
-                        color:Colors.white,
-                        child: MaterialButton(
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  defaultFormField(
+                      controller: passwordController1,
+                      suffixpressed: (){
+                        setState(() {
+                          ispasswordshow2=!ispasswordshow2;
+                        });
+                      },
+                      label: 'confirm password',
+                      prifex: Icons.lock,
+                      type: TextInputType.visiblePassword,
+                      suffix:ispasswordshow2? Icons.visibility: Icons.visibility_off,
+                      isPassword: ispasswordshow2,
+
+
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  defaultFormField(
+                      controller: phoneController,
+
+                      label: 'phone number',
+                      prifex: Icons.phone,
+                      type: TextInputType.phone,
+
+
+                  ),
+
+
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 50.0,
+                      width: 350,
+                      color:Colors.purple,
+
+                      child: MaterialButton(
                           onPressed: (){},
-                          textColor:Colors.purple ,
-                          child: Text(
-                            'login',
 
-                          ),
+                        textColor:Colors.white ,
+                        child: Text(
+                         'register',
 
                         ),
+
+
+
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 50.0,
+                      width:350,
+                      color:Colors.white,
+                      child: MaterialButton(
+                        onPressed: (){},
+                        textColor:Colors.purple ,
+                        child: Text(
+                          'login',
+
+                        ),
+
+                      ),
+                    ),
+                  ),
 
 
-                  ],
-                ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
