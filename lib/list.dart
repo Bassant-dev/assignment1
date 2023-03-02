@@ -55,7 +55,7 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
                         text: items[index]));
               }),
         ),
-        //TextButton(onPressed: insertItem, child: const Text('add'))
+
       ],
     );
   }
@@ -65,9 +65,9 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
     items.add('item ${index + 1}');
     key.currentState!.insertItem(index);
 
-    Future.delayed(const Duration(milliseconds: 300), () {
+    Future.delayed(const Duration(milliseconds: 350), () {
       scrollController.animateTo(scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+          duration: const Duration(milliseconds: 350), curve: Curves.easeIn);
     });
   }
   void deleteItem(int index) {
