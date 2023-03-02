@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-
+void navigateto (context,widget)=>Navigator.push(context, MaterialPageRoute(builder: (context) => widget),);
 Widget defaultFormField({
   required TextEditingController controller,
   required TextInputType type,
 
-
+  required String?Function(String?)? validate,
   void Function(String)? onsubmit,
   required String label,
   required IconData prifex,
@@ -26,7 +26,7 @@ Widget defaultFormField({
 
   obscureText:isPassword,
   controller: controller,
-
+  validator: validate,
   keyboardType: type,
   onFieldSubmitted: onsubmit,
 
