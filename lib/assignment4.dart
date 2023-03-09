@@ -42,7 +42,7 @@ class listt extends StatelessWidget {
 
 
               child: ListTile(
-                shape: CircleBorder(side: BorderSide(style: BorderStyle.solid)),
+
 
                 title: Text('todays grocery list'),
                 subtitle: Text('march 7,2023 9:50 pm'),
@@ -56,6 +56,7 @@ class listt extends StatelessWidget {
               color: Colors.yellow[300],
 
               child: ListTile(
+
 
                 title: Text('rich dad poor dad quotes'),
                 subtitle: Text('june 22 2023 9:58 pm'),

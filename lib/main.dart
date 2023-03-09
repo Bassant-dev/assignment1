@@ -1,6 +1,7 @@
 
 import 'package:course1/assignment4.dart';
 import 'package:course1/login.dart';
+import 'package:course1/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: listt (),
+      home:Splash_Animated (),
     );
   }
 }
