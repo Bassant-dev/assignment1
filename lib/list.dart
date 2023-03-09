@@ -71,13 +71,14 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
     });
   }
   void deleteItem(int index) {
-    items.removeAt(index);
+
 
     key.currentState!.removeItem(index, (context, animation) {
       return SizeTransition(
           sizeFactor: animation,
           child: AnimatedListItem(text: items[index], onPressed: () {}));
     });
+    items.removeAt(index);
   }
 
 
